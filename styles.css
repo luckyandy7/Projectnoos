@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: clamp(14px, 2.5vw, 16px);
+}
+
 body {
     font-family: 'Cardinal Fruit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #000000 100%);
@@ -13,6 +17,8 @@ body {
     color: #ffffff;
     margin: 0;
     padding: 0;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 .container {
@@ -33,7 +39,7 @@ body {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    padding: 20px 40px;
+    padding: clamp(15px, 3vh, 20px) clamp(20px, 5vw, 40px);
     background: transparent;
 }
 
@@ -44,13 +50,13 @@ body {
 }
 
 .logo {
-    width: 88px;
-    height: 60px;
+    width: clamp(60px, 10vw, 88px);
+    height: clamp(41px, 7vw, 60px);
 }
 
 .logo-text {
     color: #ffffff;
-    font-size: 24px;
+    font-size: clamp(18px, 3.5vw, 24px);
     font-weight: 500;
     letter-spacing: -0.5px;
     text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
@@ -66,9 +72,9 @@ body {
     border: none;
     border-radius: 25px;
     color: #1a1a1a;
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px);
     font-weight: 500;
-    padding: 12px 24px;
+    padding: clamp(8px, 1.5vw, 12px) clamp(15px, 3vw, 24px);
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     backdrop-filter: blur(10px);
@@ -95,9 +101,10 @@ body {
     align-items: center;
     text-align: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: min(1200px, 90vw);
     margin: 0 auto;
-    padding: 180px 20px 0;
+    padding: clamp(120px, 15vh, 180px) clamp(20px, 5vw, 40px) 0;
+    min-height: calc(100vh - clamp(120px, 15vh, 180px));
 }
 
 /* Main Screen Entrance Animations */
@@ -218,38 +225,38 @@ body {
 
 .main-title {
     color: #ffffff;
-    font-size: 72px;
+    font-size: clamp(2rem, 8vw, 4.5rem);
     font-weight: 500;
     word-wrap: break-word;
     line-height: 1.1;
-    max-width: 900px;
+    max-width: min(900px, 95vw);
     text-align: center;
-    letter-spacing: -2px;
+    letter-spacing: clamp(-2px, -0.2vw, -1px);
     background: linear-gradient(135deg, #ffffff 0%, #cccccc 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 0 40px rgba(255, 255, 255, 0.5);
-    margin-bottom: 30px;
+    margin-bottom: clamp(20px, 3vh, 30px);
 }
 
 .subtitle {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 24px;
+    font-size: clamp(16px, 3vw, 24px);
     font-weight: 400;
     font-family: 'GowunBatang', serif;
     word-wrap: break-word;
     text-align: center;
     letter-spacing: -0.5px;
-    margin-bottom: 60px;
+    margin-bottom: clamp(40px, 6vh, 60px);
 }
 
 .center-image {
-    width: 280px;
-    height: 190px;
+    width: min(280px, 50vw);
+    height: min(190px, 34vw);
     filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.2));
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    margin-bottom: 80px;
+    margin-bottom: clamp(50px, 8vh, 80px);
     position: relative;
 }
 
@@ -259,8 +266,8 @@ body {
 }
 
 .cta-button {
-    width: 500px;
-    height: 70px;
+    width: min(500px, 85vw);
+    height: clamp(55px, 7vh, 70px);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%);
     border-radius: 50px;
     border: 2px solid rgba(255, 0, 0, 0.8);
@@ -299,13 +306,13 @@ body {
 
 .cta-text-en {
     color: black;
-    font-size: 24px;
+    font-size: clamp(16px, 3vw, 24px);
     font-weight: 500;
 }
 
 .cta-text-ko {
     color: black;
-    font-size: 24px;
+    font-size: clamp(16px, 3vw, 24px);
     font-weight: 700;
 }
 
@@ -356,8 +363,8 @@ body {
 /* Bottom Right Music Control */
 .music-control-bottom {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: clamp(20px, 5vh, 40px);
+    right: clamp(20px, 5vw, 40px);
     z-index: 10002;
     opacity: 0;
     animation: fadeInBottomMusic 1s ease-out 5s forwards;
@@ -380,7 +387,7 @@ body {
 .music-text {
     color: rgba(255, 255, 255, 0.7);
     font-family: 'GowunBatang', serif;
-    font-size: 14px;
+    font-size: clamp(12px, 2vw, 14px);
     letter-spacing: -0.2px;
     white-space: nowrap;
     transition: all 0.3s ease;
@@ -678,7 +685,7 @@ body {
 
 /* Features Section Styles */
 .features-section {
-    padding: 120px 0;
+    padding: clamp(60px, 15vh, 120px) 0;
     background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.3) 50%, rgba(26, 26, 26, 0.5) 100%);
     position: relative;
     overflow: hidden;
@@ -709,9 +716,9 @@ body {
 }
 
 .features-container {
-    max-width: 1200px;
+    max-width: min(1200px, 90vw);
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 clamp(20px, 5vw, 40px);
     position: relative;
 }
 
@@ -775,25 +782,25 @@ body {
 
 .features-title {
     font-family: 'GowunBatang', serif;
-    font-size: 48px;
+    font-size: clamp(28px, 6vw, 48px);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.9);
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: clamp(50px, 10vh, 100px);
     letter-spacing: -1px;
 }
 
 .feature-card {
     display: flex;
     align-items: center;
-    gap: 60px;
-    margin-bottom: 120px;
+    gap: clamp(30px, 8vw, 60px);
+    margin-bottom: clamp(60px, 15vh, 120px);
     opacity: 0;
     transform: translateY(80px);
     transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     background: rgba(255, 255, 255, 0.02);
-    padding: 40px;
-    border-radius: 24px;
+    padding: clamp(20px, 5vw, 40px);
+    border-radius: clamp(16px, 3vw, 24px);
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(10px);
     cursor: pointer;
@@ -987,15 +994,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    padding: clamp(20px, 5vw, 40px);
 }
 
 .modal-content {
     background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(10, 10, 10, 0.98) 100%);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 32px;
-    padding: 60px;
-    max-width: 900px;
+    border-radius: clamp(20px, 4vw, 32px);
+    padding: clamp(30px, 6vw, 60px);
+    max-width: min(900px, 90vw);
     max-height: 80vh;
     overflow-y: auto;
     position: relative;
@@ -1050,7 +1057,7 @@ body {
 
 .modal-title-en {
     font-family: 'Cardinal Fruit', sans-serif;
-    font-size: 36px;
+    font-size: clamp(24px, 5vw, 36px);
     font-weight: 500;
     color: #ffffff;
     margin-bottom: 16px;
@@ -1063,7 +1070,7 @@ body {
 
 .modal-title-ko {
     font-family: 'GowunBatang', serif;
-    font-size: 28px;
+    font-size: clamp(20px, 4vw, 28px);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 24px;
@@ -1072,7 +1079,7 @@ body {
 
 .modal-description {
     font-family: 'GowunBatang', serif;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.7;
@@ -1091,7 +1098,7 @@ body {
 
 .modal-features li {
     font-family: 'GowunBatang', serif;
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px);
     color: rgba(255, 255, 255, 0.8);
     padding: 15px 20px;
     background: rgba(255, 255, 255, 0.05);
@@ -1118,19 +1125,19 @@ body {
 }
 
 .feature-icon {
-    flex: 0 0 120px;
+    flex: 0 0 min(120px, 20vw);
     display: flex;
     justify-content: center;
     align-items: center;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: clamp(12px, 3vw, 20px);
+    padding: clamp(15px, 3vw, 20px);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .feature-image {
-    width: 80px;
-    height: 80px;
+    width: min(80px, 15vw);
+    height: min(80px, 15vw);
     object-fit: contain;
     filter: brightness(1.2);
 }
@@ -1141,7 +1148,7 @@ body {
 
 .feature-title-en {
     font-family: 'Cardinal Fruit', sans-serif;
-    font-size: 28px;
+    font-size: clamp(18px, 4vw, 28px);
     font-weight: 500;
     color: #ffffff;
     margin-bottom: 8px;
@@ -1154,7 +1161,7 @@ body {
 
 .feature-title-ko {
     font-family: 'GowunBatang', serif;
-    font-size: 24px;
+    font-size: clamp(16px, 3.5vw, 24px);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.8);
     margin-bottom: 16px;
@@ -1163,7 +1170,7 @@ body {
 
 .feature-description {
     font-family: 'GowunBatang', serif;
-    font-size: 18px;
+    font-size: clamp(14px, 2.5vw, 18px);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
@@ -1198,7 +1205,7 @@ body:hover .magnetic-cursor {
 .scroll-progress {
     position: fixed;
     top: 50%;
-    right: 30px;
+    right: clamp(15px, 4vw, 30px);
     transform: translateY(-50%);
     z-index: 1000;
     opacity: 0;
@@ -1298,165 +1305,141 @@ html {
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-    .main-title {
-        font-size: 56px;
-        max-width: 80%;
-    }
-
-    .header {
-        left: 20px;
-        right: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .header {
-        left: 20px;
-        right: 20px;
-        padding: 0 15px;
-        border-radius: 15px;
-    }
-
-    .logo-text {
-        font-size: 20px;
-    }
-
-    .nav-buttons {
-        gap: 10px;
-    }
-
-    .nav-button {
-        font-size: 16px;
-        padding: 10px 18px;
-    }
-
-    .main-content {
-        margin-top: 120px;
-    }
-
-    .main-title {
-        font-size: 40px;
-        max-width: 90%;
-        margin-bottom: 20px;
-    }
-
-    .subtitle {
-        font-size: 20px;
-        margin-bottom: 40px;
-    }
-
-    .center-image {
-        width: 200px;
-        height: 135px;
-        margin-bottom: 60px;
-    }
-
-    .cta-button {
-        width: 85%;
-        max-width: 400px;
-        height: 60px;
-    }
-
-    .cta-text-en, .cta-text-ko {
-        font-size: 18px;
-    }
-
-    /* Features Section Mobile */
-    .features-section {
-        padding: 80px 0;
-    }
-
-    .features-container {
-        padding: 0 20px;
-    }
-
-    .features-title {
-        font-size: 32px;
-        margin-bottom: 60px;
+    .container {
+        max-width: 95vw;
+        margin: 0 auto;
     }
 
     .feature-card {
-        flex-direction: column !important;
-        gap: 30px;
-        margin-bottom: 80px;
-        padding: 30px 20px;
-        text-align: center;
-    }
-
-    .feature-icon {
-        flex: none;
-    }
-
-    .feature-title-en {
-        font-size: 22px;
-    }
-
-    .feature-title-ko {
-        font-size: 20px;
-    }
-
-    .feature-description {
-        font-size: 16px;
-    }
-
-    /* Modal Mobile Styles */
-    .modal-content {
-        padding: 40px 30px;
-        margin: 20px;
-        max-height: 90vh;
-    }
-
-    .modal-title-en {
-        font-size: 28px;
-    }
-
-    .modal-title-ko {
-        font-size: 22px;
-    }
-
-    .modal-description {
-        font-size: 18px;
+        gap: 40px;
+        padding: 30px;
     }
 
     .modal-features ul {
         grid-template-columns: 1fr;
         gap: 15px;
     }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: clamp(14px, 2vw, 16px);
+    }
+
+    .header {
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    .logo-container {
+        gap: 8px;
+    }
+
+    .nav-buttons {
+        gap: 8px;
+    }
+
+    .main-content {
+        padding-top: clamp(100px, 20vh, 140px);
+    }
+
+    .feature-card {
+        flex-direction: column !important;
+        text-align: center;
+        gap: 25px;
+        padding: 25px 20px;
+        margin-bottom: clamp(50px, 12vh, 80px);
+    }
+
+    .feature-icon {
+        flex: none;
+        width: min(100px, 25vw);
+        height: min(100px, 25vw);
+        padding: 15px;
+    }
+
+    .feature-image {
+        width: min(70px, 18vw);
+        height: min(70px, 18vw);
+    }
+
+    .modal-features ul {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
 
     .modal-features li {
-        font-size: 16px;
         padding: 12px 15px;
         padding-left: 35px;
+        font-size: 14px;
+    }
+
+    .music-sound-wave {
+        padding: 6px 10px;
+        height: 20px;
+    }
+
+    .music-wave {
+        width: 2px;
+    }
+
+    .scroll-progress {
+        right: 15px;
+    }
+
+    .progress-bar {
+        height: 150px;
     }
 }
 
 @media (max-width: 480px) {
+    .logo-container {
+        gap: 6px;
+    }
+
+    .nav-buttons {
+        gap: 6px;
+    }
+
     .main-content {
-        margin-top: 100px;
+        padding-top: clamp(90px, 18vh, 120px);
+        padding-left: 15px;
+        padding-right: 15px;
     }
 
-    .main-title {
-        font-size: 28px;
-        margin-bottom: 15px;
+    .feature-card {
+        padding: 20px 15px;
+        margin-bottom: clamp(40px, 10vh, 60px);
     }
 
-    .subtitle {
-        font-size: 16px;
-        margin-bottom: 30px;
+    .feature-icon {
+        width: min(90px, 22vw);
+        height: min(90px, 22vw);
     }
 
-    .center-image {
-        width: 160px;
-        height: 108px;
-        margin-bottom: 40px;
+    .feature-image {
+        width: min(60px, 16vw);
+        height: min(60px, 16vw);
     }
 
-    .cta-button {
-        width: 90%;
-        height: 55px;
+    .modal-content {
+        margin: 10px;
+        padding: 25px 20px;
     }
 
-    .cta-text-en, .cta-text-ko {
-        font-size: 16px;
+    .modal-image {
+        width: 90px;
+        height: 90px;
+    }
+
+    .music-control-bottom {
+        bottom: 15px;
+        right: 15px;
+        gap: 8px;
+    }
+
+    .music-sound-wave {
+        padding: 5px 8px;
+        height: 18px;
     }
 }
