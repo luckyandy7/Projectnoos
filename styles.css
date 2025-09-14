@@ -358,7 +358,7 @@ body {
     position: fixed;
     bottom: 40px;
     right: 40px;
-    z-index: 10001;
+    z-index: 10002;
     opacity: 0;
     animation: fadeInBottomMusic 1s ease-out 5s forwards;
     display: flex;
