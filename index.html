@@ -388,21 +388,13 @@
             document.addEventListener('mousemove', (e) => {
                 mouseX = e.clientX;
                 mouseY = e.clientY;
+
+                // 즉시 커서 위치 업데이트 (더 정확한 동기화)
+                cursor.style.left = mouseX - 10 + 'px';
+                cursor.style.top = mouseY - 10 + 'px';
             });
 
-            function animateCursor() {
-                const dx = mouseX - cursorX;
-                const dy = mouseY - cursorY;
-
-                cursorX += dx * 0.3;
-                cursorY += dy * 0.3;
-
-                cursor.style.transform = `translate(${cursorX - 10}px, ${cursorY - 10}px)`;
-
-                requestAnimationFrame(animateCursor);
-            }
-
-            setTimeout(animateCursor, 4500);
+            // 애니메이션 함수 제거 - 즉시 업데이트로 대체
 
             // Scroll Progress
             const progressBar = document.querySelector('.progress-bar');

@@ -1197,6 +1197,7 @@ body {
     z-index: 9998;
     mix-blend-mode: difference;
     transition: background 0.2s ease, transform 0.2s ease;
+    transform: translate(0, 0);
 }
 
 body:hover .magnetic-cursor {
