@@ -1,287 +1,339 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project: NOOS</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <style>
-        @font-face {
-            font-family: 'Cardinal Fruit';
-            src: url('./cardinal-fruit-medium.woff2') format('woff2'),
-                 url('./cardinal-fruit-medium.woff') format('woff'),
-                 url('./cardinal-fruit-medium.ttf') format('truetype');
-            font-weight: 500;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'GowunBatang';
-            src: url('./GowunBatang-Regular.woff2') format('woff2'),
-                 url('./GowunBatang-Regular.woff') format('woff'),
-                 url('./GowunBatang-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-        }
+      @font-face {
+        font-family: "Cardinal Fruit";
+        src: url("./font/cardinal-fruit-medium.woff2") format("woff2"),
+          url("./font/cardinal-fruit-medium.woff") format("woff"),
+          url("./font/Cardinal Fruit Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "GowunBatang";
+        src: url("./font/GowunBatang-Regular.woff2") format("woff2"),
+          url("./font/GowunBatang-Regular.woff") format("woff"),
+          url("./font/GowunBatang-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
     </style>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Background Music -->
     <audio id="backgroundMusic" loop preload="auto">
-        <source src="background.mp3" type="audio/mpeg">
+      <source src="music/background.mp3" type="audio/mpeg" />
     </audio>
 
     <!-- Intro Animation -->
     <div class="intro-overlay" id="introOverlay">
-        <div class="intro-logo">
-            <img src="icon.svg" alt="Project NOOS Logo" class="intro-logo-image">
-        </div>
+      <div class="intro-logo">
+        <img src="image/icon.svg" alt="Project NOOS Logo" class="intro-logo-image" />
+      </div>
     </div>
 
     <div class="container" id="mainContent">
-        <!-- Logo and Navigation -->
-        <div class="header">
-            <div class="logo-container">
-                <img class="logo" src="icon.svg" alt="Logo" />
-                <div class="logo-text">Project: NOOS</div>
-            </div>
-            <div class="nav-buttons">
-                <button class="nav-button">Sign in</button>
-                <button class="nav-button download-btn">Download</button>
-            </div>
+      <!-- Logo and Navigation -->
+      <div class="header">
+        <div class="logo-container">
+          <img class="logo" src="image/icon.svg" alt="Logo" />
+          <div class="logo-text">Project: NOOS</div>
         </div>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <h1 class="main-title">Redefining focus, creativity, and balance — in real time.</h1>
-            <p class="subtitle">집중, 창의, 균형을 실시간으로 재정의하다.</p>
-
-            <!-- Center Image -->
-            <img class="center-image" src="icon.svg" alt="Project NOOS" />
-
-            <!-- CTA Button -->
-            <div class="cta-button">
-                <span class="cta-text-en">Project: NOOS</span><span class="cta-text-ko">에 뛰어들기</span>
-            </div>
-
+        <div class="nav-buttons">
+          <button class="nav-button">Sign in</button>
+          <button class="nav-button download-btn">Download</button>
         </div>
+      </div>
 
-        <!-- Scroll Progress Indicator -->
-        <div class="scroll-progress">
-            <div class="progress-bar"></div>
-            <div class="progress-dots">
-                <div class="progress-dot active" data-target="intro"></div>
-                <div class="progress-dot" data-target="features"></div>
-            </div>
+      <!-- Main Content -->
+      <div class="main-content">
+        <h1 class="main-title">
+          Redefining focus, creativity, and balance — in real time.
+        </h1>
+        <p class="subtitle">집중, 창의, 균형을 실시간으로 재정의하다.</p>
+
+        <!-- Center Image -->
+        <img class="center-image" src="image/icon.svg" alt="Project NOOS" />
+
+        <!-- CTA Button -->
+        <div class="cta-button">
+          <span class="cta-text-en">Project: NOOS</span
+          ><span class="cta-text-ko">에 뛰어들기</span>
         </div>
+      </div>
 
-        <!-- Features Section -->
-        <section class="features-section" id="features">
-            <div class="features-container">
-                <h2 class="features-title">혁신적인 기능들</h2>
+      <!-- Scroll Progress Indicator -->
+      <div class="scroll-progress">
+        <div class="progress-bar"></div>
+        <div class="progress-dots">
+          <div class="progress-dot active" data-target="intro"></div>
+          <div class="progress-dot" data-target="features"></div>
+        </div>
+      </div>
 
-                <div class="feature-card" data-feature="sensing">
-                    <div class="feature-icon">
-                        <img src="다중 감각 인지.png" alt="Multi-sensory Sensing" class="feature-image">
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title-en">Multi-sensory Cognitive & Emotional Sensing</h3>
-                        <h4 class="feature-title-ko">다중 감각 인지·감성 센싱</h4>
-                        <p class="feature-description">뇌파(EEG)를 측정하여 사용자의 인지, 감정 상태를 실시간으로 감지합니다.</p>
-                    </div>
-                </div>
+      <!-- Features Section -->
+      <section class="features-section" id="features">
+        <div class="features-container">
+          <h2 class="features-title">혁신적인 기능들</h2>
 
-                <div class="feature-card" data-feature="ai">
-                    <div class="feature-icon">
-                        <img src="ai.png" alt="AI Fusion" class="feature-image">
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title-en">Cognitive-Emotional State Fusion AI</h3>
-                        <h4 class="feature-title-ko">인지-감성 융합 AI</h4>
-                        <p class="feature-description">인지+감성 데이터를 실시간으로 융합하여 "불안하지만 집중하는 상태"와 같은 복합적 내면 상태를 추론합니다.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card" data-feature="generation">
-                    <div class="feature-icon">
-                        <img src="실시간멀티모달생성.png" alt="Multimodal Generation" class="feature-image">
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title-en">Real-time Multimodal Generation</h3>
-                        <h4 class="feature-title-ko">실시간 멀티모달 생성</h4>
-                        <p class="feature-description">조명, 소리, 추상 아트워크, 오브제 움직임을 동적으로 생성하여 집중·창의·휴식 상황별 최적화 환경을 제공합니다.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card" data-feature="dashboard">
-                    <div class="feature-icon">
-                        <img src="dashboard.png" alt="Dashboard" class="feature-image">
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title-en">Unified Life-log Dashboard</h3>
-                        <h4 class="feature-title-ko">통합 라이프로그 대시보드</h4>
-                        <p class="feature-description">하루 동안의 집중·감정 변화 타임라인을 제공하여 자기 성찰과 패턴 분석을 지원합니다.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card" data-feature="learning">
-                    <div class="feature-icon">
-                        <img src="개인화강화.png" alt="Reinforcement Learning" class="feature-image">
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title-en">Personalized Reinforcement Learning</h3>
-                        <h4 class="feature-title-ko">개인화 강화학습</h4>
-                        <p class="feature-description">사용자의 피드백("조명 좋음/방해됨")을 반영하여 점점 더 맞춤형 환경을 제공합니다.</p>
-                    </div>
-                </div>
-
-                <div class="feature-card" data-feature="objet">
-                    <div class="feature-icon">
-                        <img src="objet.png" alt="AI Objet" class="feature-image">
-                    </div>
-                    <div class="feature-content">
-                        <h3 class="feature-title-en">AI Objet</h3>
-                        <h4 class="feature-title-ko">AI 오브제</h4>
-                        <p class="feature-description">LED의 섬세한 빛의 움직임과 빛의 색 제공, 최적화된 사운드 제공, 최적의 습도와 온도조절을 통한 최적화된 환경을 제공하는 오브제입니다.</p>
-                    </div>
-                </div>
+          <div class="feature-card" data-feature="sensing">
+            <div class="feature-icon">
+              <img
+                src="image/다중 감각 인지.png"
+                alt="Multi-sensory Sensing"
+                class="feature-image"
+              />
             </div>
-        </section>
+            <div class="feature-content">
+              <h3 class="feature-title-en">
+                Multi-sensory Cognitive & Emotional Sensing
+              </h3>
+              <h4 class="feature-title-ko">다중 감각 인지·감성 센싱</h4>
+              <p class="feature-description">
+                뇌파(EEG)를 측정하여 사용자의 인지, 감정 상태를 실시간으로
+                감지합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card" data-feature="ai">
+            <div class="feature-icon">
+              <img src="image/ai.png" alt="AI Fusion" class="feature-image" />
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title-en">
+                Cognitive-Emotional State Fusion AI
+              </h3>
+              <h4 class="feature-title-ko">인지-감성 융합 AI</h4>
+              <p class="feature-description">
+                인지+감성 데이터를 실시간으로 융합하여 "불안하지만 집중하는
+                상태"와 같은 복합적 내면 상태를 추론합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card" data-feature="generation">
+            <div class="feature-icon">
+              <img
+                src="image/실시간멀티모달생성.png"
+                alt="Multimodal Generation"
+                class="feature-image"
+              />
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title-en">Real-time Multimodal Generation</h3>
+              <h4 class="feature-title-ko">실시간 멀티모달 생성</h4>
+              <p class="feature-description">
+                조명, 소리, 추상 아트워크, 오브제 움직임을 동적으로 생성하여
+                집중·창의·휴식 상황별 최적화 환경을 제공합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card" data-feature="dashboard">
+            <div class="feature-icon">
+              <img src="image/dashboard.png" alt="Dashboard" class="feature-image" />
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title-en">Unified Life-log Dashboard</h3>
+              <h4 class="feature-title-ko">통합 라이프로그 대시보드</h4>
+              <p class="feature-description">
+                하루 동안의 집중·감정 변화 타임라인을 제공하여 자기 성찰과 패턴
+                분석을 지원합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card" data-feature="learning">
+            <div class="feature-icon">
+              <img
+                src="image/개인화강화.png"
+                alt="Reinforcement Learning"
+                class="feature-image"
+              />
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title-en">
+                Personalized Reinforcement Learning
+              </h3>
+              <h4 class="feature-title-ko">개인화 강화학습</h4>
+              <p class="feature-description">
+                사용자의 피드백("조명 좋음/방해됨")을 반영하여 점점 더 맞춤형
+                환경을 제공합니다.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature-card" data-feature="objet">
+            <div class="feature-icon">
+              <img src="image/objet.png" alt="AI Objet" class="feature-image" />
+            </div>
+            <div class="feature-content">
+              <h3 class="feature-title-en">AI Objet</h3>
+              <h4 class="feature-title-ko">AI 오브제</h4>
+              <p class="feature-description">
+                LED의 섬세한 빛의 움직임과 빛의 색 제공, 최적화된 사운드 제공,
+                최적의 습도와 온도조절을 통한 최적화된 환경을 제공하는
+                오브제입니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- Music Control (Bottom Right) - Fixed Position -->
     <div class="music-control-bottom" id="musicControlBottom">
-        <div class="music-text">음악과 함께하세요</div>
-        <div class="music-sound-wave" id="musicSoundWave">
-            <div class="music-wave"></div>
-            <div class="music-wave"></div>
-            <div class="music-wave"></div>
-            <div class="music-wave"></div>
-            <div class="music-wave"></div>
-        </div>
+      <div class="music-text">음악과 함께하세요</div>
+      <div class="music-sound-wave" id="musicSoundWave">
+        <div class="music-wave"></div>
+        <div class="music-wave"></div>
+        <div class="music-wave"></div>
+        <div class="music-wave"></div>
+        <div class="music-wave"></div>
+      </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const introOverlay = document.getElementById('introOverlay');
-            const mainContent = document.getElementById('mainContent');
-            const backgroundMusic = document.getElementById('backgroundMusic');
-            const musicControl = document.getElementById('musicControl');
-            const musicBtn = document.getElementById('musicBtn');
+      document.addEventListener("DOMContentLoaded", function () {
+        const introOverlay = document.getElementById("introOverlay");
+        const mainContent = document.getElementById("mainContent");
+        const backgroundMusic = document.getElementById("backgroundMusic");
+        const musicControl = document.getElementById("musicControl");
+        const musicBtn = document.getElementById("musicBtn");
 
-            // Hide main content initially
-            mainContent.style.opacity = '0';
+        // Hide main content initially
+        mainContent.style.opacity = "0";
 
-            // Background music setup
-            let musicStarted = false;
-            let userInteracted = false;
+        // Background music setup
+        let musicStarted = false;
+        let userInteracted = false;
 
-            // Function to start music
-            function startMusic() {
-                if (!musicStarted && userInteracted) {
-                    backgroundMusic.volume = 1.0; // Set volume to 100%
-                    backgroundMusic.play().then(() => {
-                        musicStarted = true;
-                        updateMusicControl(true);
-                    }).catch(e => {
-                        console.log('Music autoplay prevented:', e);
-                    });
-                }
-            }
+        // Function to start music
+        function startMusic() {
+          if (!musicStarted && userInteracted) {
+            backgroundMusic.volume = 1.0; // Set volume to 100%
+            backgroundMusic
+              .play()
+              .then(() => {
+                musicStarted = true;
+                updateMusicControl(true);
+              })
+              .catch((e) => {
+                console.log("Music autoplay prevented:", e);
+              });
+          }
+        }
 
+        // Bottom music control
+        const musicControlBottom =
+          document.getElementById("musicControlBottom");
+        const musicSoundWave = document.getElementById("musicSoundWave");
 
-            // Bottom music control
-            const musicControlBottom = document.getElementById('musicControlBottom');
-            const musicSoundWave = document.getElementById('musicSoundWave');
+        // Function to update music control
+        function updateMusicControl(isPlaying) {
+          if (isPlaying) {
+            musicControlBottom.classList.remove("paused");
+          } else {
+            musicControlBottom.classList.add("paused");
+          }
+        }
 
-            // Function to update music control
-            function updateMusicControl(isPlaying) {
-                if (isPlaying) {
-                    musicControlBottom.classList.remove('paused');
-                } else {
-                    musicControlBottom.classList.add('paused');
-                }
-            }
-
-            // Music control click handler
-            musicControlBottom.addEventListener('click', function() {
-                userInteracted = true;
-                if (backgroundMusic.paused) {
-                    backgroundMusic.play().then(() => {
-                        updateMusicControl(true);
-                    });
-                } else {
-                    backgroundMusic.pause();
-                    updateMusicControl(false);
-                }
+        // Music control click handler
+        musicControlBottom.addEventListener("click", function () {
+          userInteracted = true;
+          if (backgroundMusic.paused) {
+            backgroundMusic.play().then(() => {
+              updateMusicControl(true);
             });
+          } else {
+            backgroundMusic.pause();
+            updateMusicControl(false);
+          }
+        });
 
-            // Try to start music on any user interaction
-            document.addEventListener('click', function() {
-                userInteracted = true;
-                startMusic();
-            }, { once: true });
+        // Try to start music on any user interaction
+        document.addEventListener(
+          "click",
+          function () {
+            userInteracted = true;
+            startMusic();
+          },
+          { once: true }
+        );
 
-            document.addEventListener('keydown', function() {
-                userInteracted = true;
-                startMusic();
-            }, { once: true });
+        document.addEventListener(
+          "keydown",
+          function () {
+            userInteracted = true;
+            startMusic();
+          },
+          { once: true }
+        );
 
-            // Start intro animation
-            setTimeout(() => {
-                introOverlay.classList.add('fade-out');
-            }, 3500); // Logo scales for 3.5 seconds
+        // Start intro animation
+        setTimeout(() => {
+          introOverlay.classList.add("fade-out");
+        }, 3500); // Logo scales for 3.5 seconds
 
-            // Show main content after intro
-            setTimeout(() => {
-                introOverlay.style.display = 'none';
-                mainContent.style.opacity = '1';
-                mainContent.classList.add('fade-in');
-            }, 4500); // Total intro duration 4.5 seconds
+        // Show main content after intro
+        setTimeout(() => {
+          introOverlay.style.display = "none";
+          mainContent.style.opacity = "1";
+          mainContent.classList.add("fade-in");
+        }, 4500); // Total intro duration 4.5 seconds
 
-            // Scroll Animation Observer
-            const observerOptions = {
-                threshold: 0.2,
-                rootMargin: '0px 0px -100px 0px'
-            };
+        // Scroll Animation Observer
+        const observerOptions = {
+          threshold: 0.2,
+          rootMargin: "0px 0px -100px 0px",
+        };
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('feature-visible');
-                    }
-                });
-            }, observerOptions);
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("feature-visible");
+            }
+          });
+        }, observerOptions);
 
-            // Observe all feature cards
-            setTimeout(() => {
-                const featureCards = document.querySelectorAll('.feature-card');
-                featureCards.forEach(card => observer.observe(card));
-            }, 4500); // Start observing after intro
+        // Observe all feature cards
+        setTimeout(() => {
+          const featureCards = document.querySelectorAll(".feature-card");
+          featureCards.forEach((card) => observer.observe(card));
+        }, 4500); // Start observing after intro
 
-            // Fullscreen Modal Effect
-            setTimeout(() => {
-                const cards = document.querySelectorAll('.feature-card');
+        // Fullscreen Modal Effect
+        setTimeout(() => {
+          const cards = document.querySelectorAll(".feature-card");
 
-                cards.forEach(card => {
-                    card.addEventListener('click', () => {
-                        openFeatureModal(card);
-                    });
-                });
-            }, 4500);
+          cards.forEach((card) => {
+            card.addEventListener("click", () => {
+              openFeatureModal(card);
+            });
+          });
+        }, 4500);
 
-            function openFeatureModal(card) {
-                const modal = document.createElement('div');
-                modal.className = 'feature-modal';
+        function openFeatureModal(card) {
+          const modal = document.createElement("div");
+          modal.className = "feature-modal";
 
-                const featureName = card.dataset.feature;
-                const titleEn = card.querySelector('.feature-title-en').textContent;
-                const titleKo = card.querySelector('.feature-title-ko').textContent;
-                const description = card.querySelector('.feature-description').textContent;
-                const imageSrc = card.querySelector('.feature-image').src;
+          const featureName = card.dataset.feature;
+          const titleEn = card.querySelector(".feature-title-en").textContent;
+          const titleKo = card.querySelector(".feature-title-ko").textContent;
+          const description = card.querySelector(
+            ".feature-description"
+          ).textContent;
+          const imageSrc = card.querySelector(".feature-image").src;
 
-                modal.innerHTML = `
+          modal.innerHTML = `
                     <div class="modal-overlay">
                         <div class="modal-content">
                             <button class="modal-close">&times;</button>
@@ -300,32 +352,36 @@
                     </div>
                 `;
 
-                document.body.appendChild(modal);
+          document.body.appendChild(modal);
 
-                // Animation
-                requestAnimationFrame(() => {
-                    modal.classList.add('modal-open');
-                });
+          // Animation
+          requestAnimationFrame(() => {
+            modal.classList.add("modal-open");
+          });
 
-                // Close handlers
-                modal.querySelector('.modal-close').addEventListener('click', () => closeModal(modal));
-                modal.querySelector('.modal-overlay').addEventListener('click', (e) => {
-                    if (e.target === modal.querySelector('.modal-overlay')) {
-                        closeModal(modal);
-                    }
-                });
-            }
+          // Close handlers
+          modal
+            .querySelector(".modal-close")
+            .addEventListener("click", () => closeModal(modal));
+          modal
+            .querySelector(".modal-overlay")
+            .addEventListener("click", (e) => {
+              if (e.target === modal.querySelector(".modal-overlay")) {
+                closeModal(modal);
+              }
+            });
+        }
 
-            function closeModal(modal) {
-                modal.classList.remove('modal-open');
-                setTimeout(() => {
-                    document.body.removeChild(modal);
-                }, 300);
-            }
+        function closeModal(modal) {
+          modal.classList.remove("modal-open");
+          setTimeout(() => {
+            document.body.removeChild(modal);
+          }, 300);
+        }
 
-            function getDetailedFeatures(featureName) {
-                const details = {
-                    'sensing': `
+        function getDetailedFeatures(featureName) {
+          const details = {
+            sensing: `
                         <ul>
                             <li>실시간 EEG 브레인파 측정</li>
                             <li>다중 센서 융합 기술</li>
@@ -333,7 +389,7 @@
                             <li>인지 부하 측정</li>
                         </ul>
                     `,
-                    'ai': `
+            ai: `
                         <ul>
                             <li>딥러닝 기반 상태 추론</li>
                             <li>실시간 데이터 처리</li>
@@ -341,7 +397,7 @@
                             <li>개인별 패턴 학습</li>
                         </ul>
                     `,
-                    'generation': `
+            generation: `
                         <ul>
                             <li>동적 조명 시스템</li>
                             <li>적응형 사운드스케이프</li>
@@ -349,7 +405,7 @@
                             <li>환경 최적화 엔진</li>
                         </ul>
                     `,
-                    'dashboard': `
+            dashboard: `
                         <ul>
                             <li>실시간 데이터 시각화</li>
                             <li>일별/주별 트렌드 분석</li>
@@ -357,7 +413,7 @@
                             <li>패턴 기반 권장사항</li>
                         </ul>
                     `,
-                    'learning': `
+            learning: `
                         <ul>
                             <li>사용자 피드백 학습</li>
                             <li>환경 선호도 분석</li>
@@ -365,61 +421,66 @@
                             <li>지속적 성능 개선</li>
                         </ul>
                     `,
-                    'objet': `
+            objet: `
                         <ul>
                             <li>스마트 LED 조명 제어</li>
                             <li>음향 환경 조절</li>
                             <li>온습도 자동 관리</li>
                             <li>IoT 기기 연동</li>
                         </ul>
-                    `
-                };
-                return details[featureName] || '<p>더 자세한 정보가 곧 업데이트됩니다.</p>';
-            }
+                    `,
+          };
+          return (
+            details[featureName] || "<p>더 자세한 정보가 곧 업데이트됩니다.</p>"
+          );
+        }
 
-            // Magnetic Cursor Effect
-            const cursor = document.createElement('div');
-            cursor.className = 'magnetic-cursor';
-            document.body.appendChild(cursor);
+        // Magnetic Cursor Effect
+        const cursor = document.createElement("div");
+        cursor.className = "magnetic-cursor";
+        document.body.appendChild(cursor);
 
-            let mouseX = 0, mouseY = 0;
-            let cursorX = 0, cursorY = 0;
+        let mouseX = 0,
+          mouseY = 0;
+        let cursorX = 0,
+          cursorY = 0;
 
-            document.addEventListener('mousemove', (e) => {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
+        document.addEventListener("mousemove", (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
 
-                // 즉시 커서 위치 업데이트 (더 정확한 동기화)
-                cursor.style.left = mouseX - 10 + 'px';
-                cursor.style.top = mouseY - 10 + 'px';
-            });
-
-            // 애니메이션 함수 제거 - 즉시 업데이트로 대체
-
-            // Scroll Progress
-            const progressBar = document.querySelector('.progress-bar');
-            const progressDots = document.querySelectorAll('.progress-dot');
-
-            function updateScrollProgress() {
-                const scrollTop = window.pageYOffset;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercent = (scrollTop / docHeight) * 100;
-
-                progressBar.style.height = `${Math.min(scrollPercent, 100)}%`;
-
-                // Update active dot
-                if (scrollPercent < 50) {
-                    progressDots[0].classList.add('active');
-                    progressDots[1].classList.remove('active');
-                } else {
-                    progressDots[0].classList.remove('active');
-                    progressDots[1].classList.add('active');
-                }
-            }
-
-            window.addEventListener('scroll', updateScrollProgress);
-            setTimeout(updateScrollProgress, 4500);
+          // 즉시 커서 위치 업데이트 (더 정확한 동기화)
+          cursor.style.left = mouseX - 10 + "px";
+          cursor.style.top = mouseY - 10 + "px";
         });
+
+        // 애니메이션 함수 제거 - 즉시 업데이트로 대체
+
+        // Scroll Progress
+        const progressBar = document.querySelector(".progress-bar");
+        const progressDots = document.querySelectorAll(".progress-dot");
+
+        function updateScrollProgress() {
+          const scrollTop = window.pageYOffset;
+          const docHeight =
+            document.documentElement.scrollHeight - window.innerHeight;
+          const scrollPercent = (scrollTop / docHeight) * 100;
+
+          progressBar.style.height = `${Math.min(scrollPercent, 100)}%`;
+
+          // Update active dot
+          if (scrollPercent < 50) {
+            progressDots[0].classList.add("active");
+            progressDots[1].classList.remove("active");
+          } else {
+            progressDots[0].classList.remove("active");
+            progressDots[1].classList.add("active");
+          }
+        }
+
+        window.addEventListener("scroll", updateScrollProgress);
+        setTimeout(updateScrollProgress, 4500);
+      });
     </script>
-</body>
+  </body>
 </html>
